@@ -1,0 +1,25 @@
+{
+  "name": "push-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev --sticky",
+    "start": "egg-scripts start --sticky",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.21.1",
+    "egg-cors": "^2.2.0",
+    "egg-scripts": "^2.11.0",
+    "egg-socket.io": "^4.1.5",
+    "i": "^0.3.6",
+    "lodash": "^4.17.11",
+    "socket.io-client": "^2.2.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.13.0"
+  }
+}
