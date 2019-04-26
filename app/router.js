@@ -5,6 +5,7 @@ module.exports = app => {
 
 
 	const index = controller.index;
+	router.get(`${prefix}test`, index.test);
 	router.get(`${prefix}`, index.index);
 
 	io.of("/").route("ping", io.controller.default.ping);
