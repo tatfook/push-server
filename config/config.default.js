@@ -33,7 +33,7 @@ exports.io = {
 		//db:2,
 	//},
 	namespace: {
-		'/': {
+		'/api/': {
 			//connectionMiddleware:["connection", "authenticated"],
 			connectionMiddleware:["connection"],
 			packetMiddleware:["packet"],

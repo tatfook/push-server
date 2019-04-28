@@ -6,7 +6,6 @@ exports.self = {
 	secret: "WNqN9ruNgCbCmbyXNAoxpMFRTivvvKkYdivtKguxwKbYe4dN",
 	adminSecret: "secret",
 	//secret: "V1ZSS1YySkhUa2xhU0ZwcVlsaE5iRTB3VVNVelJBJTNEJTNE",
-	baseUrl: "/core/v0/",
 	apiUrlPrefix: "/api/v0/",
 }
 
