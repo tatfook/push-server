@@ -10,6 +10,7 @@ class IndexControler extends Controller {
 		
 		//await this.ctx.socket.emit("res", "Hi");
 		nsp.emit("msg", "hello world");
+		return this.ctx.body = "OK";
 	}
 
 }
