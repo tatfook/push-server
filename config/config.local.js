@@ -4,7 +4,7 @@ exports.self = {
 	tokenExpire: 3600 * 24 * 365,
 	env:"development", // "production", "release", "development"
 	secret: "WNqN9ruNgCbCmbyXNAoxpMFRTivvvKkYdivtKguxwKbYe4dN",
-	adminSecret: "secret",
+	adminSecret: "1V1ZSS1YySkhUa2xhU0ZwcVlsaE5iRTB3VVNVelJBJTNEJTNE",
 	//secret: "V1ZSS1YySkhUa2xhU0ZwcVlsaE5iRTB3VVNVelJBJTNEJTNE",
 	apiUrlPrefix: "/api/v0/",
 }

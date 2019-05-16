@@ -1,4 +1,5 @@
-const Controller = require('egg').Controller;
+//const Controller = require('egg').Controller;
+const Controller = require("../core/controller.js");
 
 class AppControler extends Controller {
 	async broadcast() {
