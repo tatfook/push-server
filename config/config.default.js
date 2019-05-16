@@ -5,6 +5,8 @@ exports.cors = {
 	origin: "*",
 }
 
+exports.middleware = ['authenticated'];
+
 exports.security = {
 	xframe: {
 		enable: false,
@@ -26,12 +28,16 @@ exports.onerror = {
 	}
 }
 
+// https://socket.keepwork.com/
+// https://socket.keepwork.com/api/v0
+
 exports.io = {
-	//redis: {
-		//host:"10.28.18.4",
-		//port:6379,
-		//db:2,
-	//},
+	redis: {
+		host: "10.28.18.20",
+		port: 6379,
+		//password: null,
+		db: 6,
+	},
 	namespace: {
 		'/': {
 			//connectionMiddleware:["connection", "authenticated"],
@@ -40,3 +46,12 @@ exports.io = {
 		},
 	},
 };
+
+exports.redis = {
+	client: {
+		host: "10.28.18.20",
+		port: 6379,
+		password: null,
+		db: 6,
+	}
+}

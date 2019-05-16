@@ -8,5 +8,8 @@ module.exports = app => {
 	router.get(`${prefix}test`, index.test);
 	router.get(`${prefix}`, index.index);
 
-	io.of("/").route("ping", io.controller.default.ping);
+	const _app = controller.app;
+	router.post(`${prefix}app/broadcast`, _app.broadcast);
+
+	//io.of("/").route("ping", io.controller.default.ping);
 }
