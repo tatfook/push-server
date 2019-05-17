@@ -21,6 +21,22 @@ class App extends Controller {
 		nsp.to(target).emit("app/msg", msg);
 	}
 
+
+	join() {
+		const {room} = this.validate({room: "string"});
+
+		this.ctx.socket.join(room, () => {
+			this.success("OK");
+		});
+	}
+
+	join() {
+		const {room} = this.validate({room: "string"});
+
+		this.ctx.socket.leave(room, () => {
+			this.success("OK");
+		});
+	}
 }
 
 module.exports = App;
