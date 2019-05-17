@@ -13,7 +13,11 @@ util.jwt_encode = function(payload, key, expire = 3600 * 24 * 2) {
 }
 
 util.jwt_decode = function(token, key, noVerify) {
-	return jwt.decode(token, key, noVerify);
+	try {
+		return jwt.decode(token, key, noVerify);
+	} catch(e) {
+		return;
+	}
 }
 
 module.exports = util;

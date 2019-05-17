@@ -40,7 +40,6 @@ exports.io = {
 	},
 	namespace: {
 		'/': {
-			//connectionMiddleware:["connection", "authenticated"],
 			connectionMiddleware:["connection"],
 			packetMiddleware:["packet"],
 		},

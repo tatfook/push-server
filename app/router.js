@@ -11,5 +11,5 @@ module.exports = app => {
 	const _app = controller.app;
 	router.post(`${prefix}app/broadcast`, _app.broadcast);
 
-	//io.of("/").route("ping", io.controller.default.ping);
+	io.of("/").route("app/msg", io.controller.app.msg);
 }
