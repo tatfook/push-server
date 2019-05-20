@@ -16,6 +16,10 @@ class BaseController extends Controller {
 		return this.app.model;
 	}
 
+	get socket() {
+		return this.ctx.socket;
+	}
+
 	success(body = "OK") {
 		const ack = this.ctx.args[1] || (() => {});	
 		ack(body);

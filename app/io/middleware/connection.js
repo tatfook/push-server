@@ -10,7 +10,7 @@ module.exports = app => {
 
 		const user = util.jwt_decode(token || "", app.config.self.secret);
 
-		if (!user || !user.userId) return socket.disconnect();
+		//if (!user || !user.userId) return socket.disconnect();
 
 		ctx.state.user = user;
 
