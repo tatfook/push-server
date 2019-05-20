@@ -1,12 +1,10 @@
-
 const io = require('socket.io-client');
 
 const { app, mock, assert  } = require('egg-mock/bootstrap');
 
 describe("socket", () =>{
-
 	// socket链接测试
-	it("socket connect", async () =>{
+	it("socket connect", async () => {
 		const socket = await new Promise((resolve, reject) => {
 			const socket = io("http://127.0.0.1:9000");
 			socket.on("connect", data => {

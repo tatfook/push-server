@@ -14,7 +14,7 @@ module.exports = app => {
 
 		ctx.state.user = user;
 
-		//await ctx.service.socket.online({socket, ...user});
+		await ctx.service.socket.online({socket, ...user});
 
 		await next();
 	}

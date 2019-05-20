@@ -10,6 +10,7 @@ module.exports = app => {
 
 	const _app = controller.app;
 	router.post(`${prefix}app/broadcast`, _app.broadcast);
+	router.post(`${prefix}app/msg`, _app.msg);
 
 	io.of("/").route("app/msg", io.controller.app.msg);
 	io.of("/").route("app/join", io.controller.app.join);

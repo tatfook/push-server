@@ -17,22 +17,24 @@ class Socket extends Service {
 	}
 
 	async online({socket, userId}) {
-		const groups = await this.app.model.group.findAll({
-			include: [
-			{
-				as: "groupMember",
-				model: this.app.model.groupMember,
-				where: {memberId: userId}
-			}
-			]
-		}).then(list => list.map(o => o.toJSON()));
+		const rooms = [];
+		if (!userId) return;
 
-		const rooms = groups.map(o => this.getGroupRoom(o.id));
+		//const groups = await this.app.model.group.findAll({
+			//include: [
+			//{
+				//as: "groupMember",
+				//model: this.app.model.groupMember,
+				//where: {memberId: userId}
+			//}
+			//]
+		//}).then(list => list.map(o => o.toJSON()));
+
+		//const rooms = groups.map(o => this.getGroupRoom(o.id));
 		rooms.push(this.getUserRoom(userId));
 
 		return new Promise((resolve, reject) => {
 			socket.join(rooms, () => {
-				console.log(_.keys(socket.rooms));
 				return resolve(true);
 			});
 		})
