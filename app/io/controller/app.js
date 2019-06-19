@@ -22,18 +22,20 @@ class App extends Controller {
 	}
 
 	join() {
-		const {room} = this.validate({room: "string"});
+		const {room} = this.validate({});
+		if (!room) return this.throw(400, "参数错误");
+
 		this.ctx.socket.join(room, () => {
 			this.success(this.ctx.socket.rooms);
 		});
 	}
 
 	leave() {
-		const {room} = this.validate({room: "string"});
-
-		this.ctx.socket.leave(room, () => {
-			this.success(this.ctx.socket.rooms);
-		});
+		const {room} = this.validate({});
+		if (!room) return this.throw(400, "参数错误");
+		const rooms = _.isArray(room) ? room : [room];
+		_.each(rooms, room => this.ctx.socket.leave(room, () => {}));
+		return this.success();
 	}
 
 	rooms() {
